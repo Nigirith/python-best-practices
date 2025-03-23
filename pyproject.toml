@@ -1,0 +1,50 @@
+[project]
+name = "python-best-practices"
+version = "0.1.0"
+description = "A repository demonstrating Python best practices"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic" # For data validation and settings management
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit",
+    "ruff",
+    "pytest",
+    "mypy",
+    # "types-all",  # Provides type stubs for many third-party packages
+]
+
+[tool.ruff]
+line-length = 88
+# target-version = "py311"
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "C",   # flake8-comprehensions
+    "B",   # flake8-bugbear
+]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
